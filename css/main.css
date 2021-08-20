@@ -1,0 +1,13 @@
+@import url('http://fonts.cdnfonts.com/css/airbnb-cereal-app');
+
+body {
+    background-color: #fff;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-flow: column;
+}
+
