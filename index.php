@@ -3,11 +3,32 @@
 require_once __DIR__ . '/vendor/autoload.php';
 
 use App\Auth\AuthFactory;
+use App\Auth\LoginManager;
 
-$fc = AuthFactory::getFactory();
+if (isset($_COOKIE['login']) || isset($_COOKIE['password']))
+{
+    header('Location: relocate.php');
+    die();
+}
+else
+{
+    if (isset($_POST['email']) && isset($_POST['password']))
+    {
+        $login = LoginManager::auth($_POST['email'], $_POST['password']);
+        if (!isset($login))
+        {
+            header('Location: index.php?invalid=1');
+        }
+        else
+        {
+            setcookie("login", $_POST['email'], time()+3600);
+            setcookie("password", $_POST['password'], time()+3600);
+            header('Location: relocate.php');
+            die();
+        }
+    }
+}
 
-$dt = $fc->createAuth()->signInWithEmailAndPassword('sugardaddy@mail.ru', '123123AAA');
-var_dump($dt->data());
 ?>
 <!doctype html>
 <html lang="en">
@@ -26,7 +47,13 @@ var_dump($dt->data());
             <div class="heading">
                 <img src="img/main_logo.jpg" alt="логотип" class="logo">
             </div>
-            <form name="login" class="form">
+            <?php
+            if (isset($_GET['invalid']))
+                {
+                    echo "Неверные данные, повторите попытку";
+                }
+            ?>
+            <form name="login" class="form" method="post" action="index.php">
                 <div class="input-control">
                     <label for="email" class="input-label" hidden>Email Address</label>
                     <input type="email" name="email" class="input-field" placeholder="abc@mail.com">
@@ -43,7 +70,7 @@ var_dump($dt->data());
                     <a href="#" class="text text-forgetpsw">Забыли пароль?</a>
                 </div>
                 <div class="input-control">
-                    <input type="button" name="submit" class="input-submit" value="Login" disabled>
+                    <input type="submit" name="submit" class="input-submit" value="Login">
                 </div>
             </form>
         </section>
