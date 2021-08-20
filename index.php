@@ -1,5 +1,13 @@
 <?php
 
+require_once __DIR__ . '/vendor/autoload.php';
+
+use App\Auth\AuthFactory;
+
+$fc = AuthFactory::getFactory();
+
+$dt = $fc->createAuth()->signInWithEmailAndPassword('sugardaddy@mail.ru', '123123AAA');
+var_dump($dt->data());
 ?>
 <!doctype html>
 <html lang="en">
