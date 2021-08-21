@@ -20,7 +20,7 @@ if (isset($_COOKIE['login']) && isset($_COOKIE['password']))
     {
         goDie();
     }
-    echo "OK";
+    header('Location: header.php');
 }
 else
 {
