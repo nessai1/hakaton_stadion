@@ -10,6 +10,7 @@ class Role
     const ADMIN = 1;
     const SECURITY = 2;
     const DIRECTOR = 3;
+    const HEAD = 4;
     const CONTROL_GUARD = 5;
 
     public static function convertFromStringToInt($role)
@@ -24,6 +25,8 @@ class Role
                 return Role::DIRECTOR;
             case 'security':
                 return Role::SECURITY;
+            case 'HEAD':
+                return Role::HEAD;
             default:
                 return 0;
         }
@@ -41,6 +44,8 @@ class Role
                 return 'Директор';
             case Role::SECURITY:
                 return 'Служба безопасности';
+            case Role::HEAD:
+                return 'Начальник отдела';
             default:
                 return 'Неизвестно';
         }

@@ -12,6 +12,9 @@ class Ticket
     public $car;
     public $date;
 
+    protected $dir_conf;
+    protected $head_conf;
+
     protected $danger;
 
     public function __construct($data)
@@ -24,6 +27,24 @@ class Ticket
         $this->date = $data['date'];
         $this->danger = $data['dangerous'];
         $this->car = 'none';
+
+        $this->dir_conf = $data['confirmed_director'];
+        $this->head_conf = $data['confirmed_head'];
+    }
+
+    public function headConfirm()
+    {
+        return $this->head_conf;
+    }
+
+    public function directorConfirm()
+    {
+        return $this->dir_conf;
+    }
+
+    public function sbConfirm()
+    {
+        return false;
     }
 
     public function isDanger()
