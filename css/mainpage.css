@@ -1,0 +1,63 @@
+@import url("http://fonts.cdnfonts.com/css/airbnb-cereal-app");
+body {
+  font-family: 'Airbnb Cereal App', sans-serif;
+  padding: 0;
+  margin: 0; }
+
+.navbar {
+  background-color: #0E55A1;
+  width: 100%;
+  height: 30px;
+  display: flex;
+  padding: 30px;
+  flex-direction: row;
+  justify-content: space-around; }
+
+.text {
+  font-weight: 600;
+  font-size: 15px;
+  color: #fff; }
+
+.link {
+  font-weight: 400;
+  font-size: 20px;
+  color: #e1eef8;
+  text-decoration: none; }
+  .link:hover {
+    text-decoration: underline; }
+
+.edit-list {
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  background-color: #00000007; }
+
+.list-element {
+  margin: 10px;
+  padding: 30px;
+  border: 1px solid #ffffff;
+  background-color: #ffffff;
+  border-radius: 10px;
+  width: 70%;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+
+.card-info-title {
+  font-weight: 600; }
+
+.card-confirm {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+
+.user-confirm-field {
+  margin-left: 40px;
+  margin-right: 40px;
+  align-items: center;
+  justify-content: center; }
+
+/*# sourceMappingURL=mainpage.css.map */
