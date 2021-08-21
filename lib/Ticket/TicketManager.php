@@ -15,9 +15,11 @@ class TicketManager
             return [];
         foreach ($ticketsSections as $ticketSection)
         {
+            $i = 0;
             foreach ($ticketSection as $ticket)
             {
-                $tickets[] = new Ticket($ticket);
+                $tickets[] = new Ticket($ticket, $i);
+                $i++;
             }
         }
 

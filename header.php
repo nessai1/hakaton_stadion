@@ -10,6 +10,8 @@ if (!isset($_COOKIE['login']) || !isset($_COOKIE['password']))
 $user = new \App\User\UserObject($_COOKIE['login'], $_COOKIE['password']);
 $user->refreshUserData();
 
+//$aaa = \App\Database\DbManager::getReference('request_person/-MhcfKVewkhUpfPdIgnV/0/confirmed_head');
+//$aaa->set(false);
 
 
 ?>

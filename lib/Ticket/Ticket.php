@@ -17,8 +17,10 @@ class Ticket
 
     protected $danger;
 
-    public function __construct($data)
+    public function __construct($data, $ind)
     {
+
+        //var_dump($data);
         $this->fio = $data['forwho'];
         $this->pass = $data['passport'];
         $this->target = $data['purpose'];
@@ -28,8 +30,21 @@ class Ticket
         $this->danger = $data['dangerous'];
         $this->car = 'none';
 
+        $this->nodeId = $data['id'];
+        $this->nodeInd = $ind;
+
         $this->dir_conf = $data['confirmed_director'];
         $this->head_conf = $data['confirmed_head'];
+    }
+
+    public function getNodeId()
+    {
+        return $this->nodeId;
+    }
+
+    public function getNodeInd()
+    {
+        return $this->nodeInd;
     }
 
     public function headConfirm()

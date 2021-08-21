@@ -79,8 +79,12 @@ else
             ?>
             <div class="user-confirm-field">
                 <span>Вы</span><br><br>
+                <a href="/change.php?nodeId=<?=$ticket->getNodeId()?>&index=<?=$ticket->getNodeInd()?>&EDIT=Y&USER=DIR">
                 <img src="img/yes.jpg" alt="" width="30">
+                </a>
+                <a href="/change.php?nodeId=<?=$ticket->getNodeId()?>&index=<?=$ticket->getNodeInd()?>&EDIT=N&USER=DIR">
                 <img src="img/no.jpg" alt="" width="30">
+                </a>
             </div>
             <?php
         }
@@ -110,8 +114,12 @@ else
             ?>
             <div class="user-confirm-field">
                 <span>Вы</span><br><br>
-                <img src="img/yes.jpg" alt="" width="30">
-                <img src="img/no.jpg" alt="" width="30">
+                <a href="/change.php?nodeId=<?=$ticket->getNodeId()?>&index=<?=$ticket->getNodeInd()?>&EDIT=Y&USER=HED">
+                    <img src="img/yes.jpg" alt="" width="30">
+                </a>
+                <a href="/change.php?nodeId=<?=$ticket->getNodeId()?>&index=<?=$ticket->getNodeInd()?>&EDIT=N&USER=HED">
+                    <img src="img/no.jpg" alt="" width="30">
+                </a>
             </div>
             <?php
         }
