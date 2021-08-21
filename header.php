@@ -26,5 +26,10 @@ $user->refreshUserData();
 <span class="text"><?=$user->getUserName()?><br>Должность: <?=$user->getUserRoleString()?></span>
 <a class="link" href="logout.php">Выйти</a>
 </div>
+<?php
+
+echo \App\Render\RenderManager::renderList();
+
+?>
 </body>
 </html>
