@@ -14,6 +14,7 @@ class LoginManager
         $auth = AuthFactory::getFactory();
         try
         {
+
             $rs = $auth->createAuth()->signInWithEmailAndPassword($user->getEmail(), $user->getPassword());
             return $rs;
         }

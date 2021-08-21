@@ -12,7 +12,37 @@ class Role
     const DIRECTOR = 3;
     const CONTROL_GUARD = 5;
 
-    public static function getUserRole(UserObject $user): string
+    public static function convertFromStringToInt($role)
     {
+        switch ($role)
+        {
+            case 'admin':
+                return Role::ADMIN;
+            case 'control_guard':
+                return Role::CONTROL_GUARD;
+            case 'director':
+                return Role::DIRECTOR;
+            case 'security':
+                return Role::SECURITY;
+            default:
+                return 0;
+        }
+    }
+
+    public static function convertFromIntToString($role)
+    {
+        switch ($role)
+        {
+            case Role::ADMIN:
+                return 'Администратор';
+            case Role::CONTROL_GUARD:
+                return 'Работник КПП';
+            case Role::DIRECTOR:
+                return 'Директор';
+            case Role::SECURITY:
+                return 'Служба безопасности';
+            default:
+                return 'Неизвестно';
+        }
     }
 }

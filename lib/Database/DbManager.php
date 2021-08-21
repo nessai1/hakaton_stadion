@@ -19,9 +19,9 @@ class DbManager
         return self::$database;
     }
 
-    public static function getReference(string $reference)
+    public static function getReference(string $reference): \Kreait\Firebase\Database\Reference
     {
-        $db = self::getDatabase()->getReference($reference);
+        return self::getDatabase()->getReference($reference);
     }
 
 }
