@@ -28,7 +28,7 @@ $user->refreshUserData();
 </div>
 <?php
 
-echo \App\Render\RenderManager::renderList();
+echo \App\Render\RenderManager::renderList($user);
 
 ?>
 </body>
