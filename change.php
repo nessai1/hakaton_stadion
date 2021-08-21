@@ -7,7 +7,7 @@ $index = $_GET['index'];
 
 switch ($_GET['USER'])
 {
-    case 'dir':
+    case 'DIR':
         $hand = 'confirmed_director';
         break;
     default:
@@ -23,18 +23,17 @@ switch ($_GET['EDIT'])
         $trust = false;
 }
 
+//echo "ID: ". $id . "<br>";
+//echo "hand: ". $hand . "<br>" . "INDEX: " . $index;
 
 if ($trust)
 {
     $aaa = \App\Database\DbManager::getReference("request_person/{$id}/{$index}/{$hand}");
     $aaa->set(true);
-    $aaa = \App\Database\DbManager::getReference("request_person/{$id}/{$index}/{$hand}");
-    var_dump($aaa->getValue());
-    die();
 }
 else
 {
-    $aaa = \App\Database\DbManager::getReference("request_person/{$id}/{$index}/danger");
+    $aaa = \App\Database\DbManager::getReference("request_person/{$id}/{$index}/dangerous");
     $aaa->set(true);
 }
 
